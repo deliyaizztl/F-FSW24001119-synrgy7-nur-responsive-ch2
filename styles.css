@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -5,65 +9,42 @@ body {
   
   header.navbar-container {
     width: 100%;
-    padding-block: 1rem;
-    margin-inline: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 9999;
+    height: 60px;
     background-color: #F1F3FF;
   }
   
   header.navbar-container .logo img {
     width: 100%;
   }
-  
-  header.navbar-container .nav-list ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem 1rem;
-    padding-left: 0;
-  }
-  
-  header.navbar-container .nav-list ul li {
-    list-style: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
-    border: none;
-  }
-  
-  header.navbar-container .nav-list ul li a {
-    text-decoration: none;
-    color: #000000;
-    padding: 0.5rem 0.5rem;
-    font-size: 1.05rem;
-    font-weight: 1500;
-    border-radius: 0.3rem;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  header.navbar-container .nav-list ul li a:hover {
-    background-color: #5cb85f;
-    color: #ffffff;
-  }
-  
-  header.navbar-container .nav-list ul button {
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
+
+  .offcanvas-body ul button {
+    width: 81px;
+    padding: 0.5rem;
+    border-radius: 0.1rem;
     border: none;
     background-color: #5cb85f;
     color: #ffffff;
     font-size: 1.05rem;
     font-weight: 1500;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
     justify-content: center;
   }
 
-  header.navbar-container .nav-list ul button:hover {
+  .offcanvas-body ul button:hover {
     background-color: transparent;
     color: #5cb85f;
   }
+
+  .navbar .container-fluid .offcanvas {
+    max-width: 50%;
+  }
+
+  .navbar .container-fluid  .navbar-toggler {
+    border: none;
+    cursor: pointer;
+  }
+
 
   main {
     width: 100%;
@@ -78,11 +59,12 @@ body {
     display: flex;
     align-items: center;
     background-color: #F1F3FF;
+    position: relative;
   }
 
   main .profile .profile-description {
     flex: 1 1;
-    padding: 0px 50px 50px 120px;
+    padding: 50px 50px 50px 120px;
   }
 
   main .profile .profile-description .title {
@@ -116,12 +98,24 @@ body {
   main .profile .profile-image {
     flex: 1;
     display: flex;
+
+  }
+
+  main .profile .profile-image .bg-car {
+    position: absolute;
+    height: 60%;
+    bottom: 0;
+    right: 0;
+    width: 43%;
+    z-index: 0;
+    background: rgba(13, 40, 166, 1);
+    border-top-left-radius: 60px;
   }
   
   main .profile .profile-image img {
-    margin: auto;
     width: 500px;
-    min-width: 550px;
+    position: relative;
+    z-index: 2;
   }
 
   article.services {
@@ -140,6 +134,7 @@ body {
   .services-description ul {
     list-style: none;
     padding-left: 0;
+    font-size: 14px;
   }
 
   .services-description ul li {
@@ -152,7 +147,11 @@ body {
 
   article.services .services-description .title {
     margin-block: 1rem;
-    font-size: 1.8rem;
+    font-size: 24px;
+  }
+
+  article.services .services-description p {
+    font-size: 14px;
   }
 
   article.services .services-image {
@@ -183,6 +182,20 @@ body {
     gap: 1rem;
     padding: 10px;
     border-style: none;
+  }
+
+  .why-us .wu-description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .why-us .wu-description h2 {
+    font-size: 24px;
+  }
+
+  .why-us .wu-description p {
+    font-size: 14px;
   }
 
   main .why-us .card .card-1, .card-2, .card-3, .card-4 {
@@ -328,12 +341,12 @@ object-fit: cover;
   }
 
   main section.sewa h1 {
-    font-size: 30px;
+    font-size: 36px;
   }
 
   main section.sewa p {
     padding: 30px 230px 60px;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   main section.sewa button {
@@ -361,78 +374,29 @@ object-fit: cover;
     display: flex;
     flex-direction: row;
     flex: 1;
+    justify-content: center;
   }
 
   .faq .header-faq {
-    padding: 20px;
-    width: 450px;
-  }
-
-    .hidden {
-    display:none
-    }
-
-    .acrdn-str {
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    } 
+  }
 
-    .acrdn-str .acrdn-ktn {
-    width: 650px;
-    padding: 25px;
-    margin: 5px;
-    border-radius: 2px;
-    border: 1px solid;
-    }
+  .faq .header-faq h2 {
+    font-size: 24px;
+  }
 
-    .acrdn-str p.acc {
-    display:none;
-    margin:0;
-    padding-left:32px;
-    position:relative;
-    overflow:hidden;
-    max-height:0;
-    -webkit-transition:all .2s ease;
-    transition:all .2s ease; 
-    opacity:.8;
-    } 
+  .faq .header-faq p {
+    font-size: 14px;
+  }
 
-    .acrdn-ttl {
-    display:flex;
-    align-items:center;
-    font-weight:900;
-    padding:0 5px;
-    }
-
-    .acrdn-ttl span {
-    display:flex;
-    width:100%;
-    }
-
-    .acrdn-ttl span:before {
-    content:'\02C5';
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    font-size: 15px;
-    position: absolute;
-    right: 7rem;
-    height: 25px;
-    width: 25px;
-    }
-
-    .acrdn-inp:checked ~ .acrdn-ttl span:before {
-    transform: rotate(180deg);
-    } 
-
-    .acrdn-inp:checked ~  p.acc {
-    max-height: 50vh;
-    margin: 10px;
-    padding: 20px;
-    display:block;
-    }
+  .faq .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 150px;
+  }
 
   footer {
     display: flex;
@@ -493,4 +457,119 @@ object-fit: cover;
     padding: 5px;
  }
 
- 
+
+@media screen and (max-width: 992px) {
+  main .profile .profile-description {
+  padding: 0px 50px 50px 30px;
+  }
+  
+  main .profile .profile-image img {
+    max-width: 704px;
+  }
+
+  main .profile .profile-image .bg-car {
+    height: 30%;
+    width: 97%;
+  }
+
+  main section.sewa p {
+    padding: 10px;
+  }
+  
+  .faq .header-faq {
+    justify-content: center;
+    align-items: center;
+    }
+
+    .faq .accordion {
+      padding-left: 0;
+    }
+
+  .profile, .services, main .why-us .card, .faq {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  main .profile .profile-image .bg-car {
+    height: 30%;
+    width: 83%;
+  }
+
+  article.services {
+    padding: 20px;
+    margin-top: 50px;
+  }
+  
+  article.services .services-description {
+    flex: 1 1;
+    padding: 10px;
+  }
+
+  article.services .services-description ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  article.services .services-image img {
+    width: 300px;
+    min-width: 300px;
+  }
+
+  .why-us .wu-description {
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .why-us .card .card-1, .card-2, .card-3, .card-4 {
+    width: 328px;
+  }
+
+  main section.sewa {
+    margin: 20px;
+  }
+
+  .acrdn-str .acrdn-ktn {
+    width: 328px;
+    padding: 25px;
+    margin: 5px;
+    border-radius: 2px;
+    border: 1px solid;
+    }
+
+  footer .footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 2px 5px;
+    margin: 10px;
+  }
+
+  footer .footer .navlist-footer ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main .profile .profile-image img {
+    max-width: 344px;
+  }
+
+  main .profile .profile-image .bg-car {
+    height: 25%;
+    width: 89%;
+  }
+
+  .card-body {
+    flex-direction: column;
+  }
+
+  .testi-rating {
+    text-align: center;
+    }
+}
